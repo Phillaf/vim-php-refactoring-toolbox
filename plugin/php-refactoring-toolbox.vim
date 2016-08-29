@@ -432,11 +432,7 @@ endfunction
 " }}}
 
 function! s:PhpInsertPropertyExtended(name, visibility, insertLine, emptyLineBefore) " {{{
-    call append(a:insertLine, '')
-    call append(a:insertLine + a:emptyLineBefore, '/**')
-    call append(a:insertLine + a:emptyLineBefore + 1, '* @var mixed')
-    call append(a:insertLine + a:emptyLineBefore + 2, '*/')
-    call append(a:insertLine + a:emptyLineBefore + 3, a:visibility . " $" . a:name . ';')
+    call append(a:insertLine, a:visibility . " $" . a:name . ';')
     normal j=5=
 endfunction
 " }}}
